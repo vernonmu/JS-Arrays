@@ -6,6 +6,10 @@ var arr = [10,20,30];
 
   //Code Here
 
+  function first(arr) {
+    return arr[0]
+  }
+
 
 //Next problem
 
@@ -17,6 +21,10 @@ var arr = [40,50,60];
 
   //Code Here
 
+  function last(arr) {
+    return arr[arr.length-1]
+  }
+
 
 //Next Problem
 
@@ -25,6 +33,12 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
 //Create a function named 'looper' that is given family as it's only argument, loops through the given array, and alerts every item in the array.
 
   //Code Here
+
+  function looper(family) {
+    family.forEach(function (x){
+     alert(x)
+    })
+  }
 
 
 //Next problem
@@ -37,6 +51,15 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
   //Code Here
 
 
+  function reversedLooper(letters) {
+
+    for (var i = arr.length-1; i >= 0; i--) {
+
+      alert(letters[i])
+  }
+}
+
+
 //Next Problem
 
 
@@ -44,6 +67,20 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 //Write a function named evenFinder that is given nums as it's only argument and removes all values that aren't even from the given array.
 
   //Code Here
+
+  function evenFinder(nums){
+    for (var i = 0; i < nums.length; i++) {
+      if (nums[i] % 2 !== 0) {
+
+        nums.splice(i, 1)
+
+      }
+
+    }
+
+    return nums
+
+  }
 
 
 //Next problem
@@ -56,6 +93,26 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 
 
   //Code Here
+
+  function divider(numbersArray) {
+    var evens = [];
+    var odds = [];
+    var biggerArray;
+    for (var i = 0; i < numbersArray.length; i++) {
+      if (numbersArray[i] % 2 === 0) {
+
+        evens.push(numbersArray[i])
+
+      }
+
+      else if (numbersArray[i] % 2 !== 0) {
+        odds.push(numbersArray[i])
+      }
+    }
+
+
+    return [evens, odds]
+  }
 
 
 //Next Problem
@@ -71,17 +128,28 @@ var getRandomArbitrary = function() {
 
   //Code Here
 
+
+  function finder(arr) {
+      return arr.indexOf(getRandomArbitrary()) !== -1
+    }
+
+
   //Code Here
 
 
 //Next problem
 
-
-
 var str = 'this is my sentence';
 //Write a function called reverse that takes a given str as it's only argument and returns that string after it's been reversed
 
   //Code Here
+
+  function reverse(param) {
+    var answer = param.split('');
+    answer = answer.reverse();
+    answer = answer.join('');
+    return answer;
+  }
 
 
 //Next Problem
@@ -104,6 +172,22 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
   //Code Here
+  function removeItem(pm1, pm2) {
+
+    for (var i = 0; i < pm1.length; i++) {
+      if (pm2 === pm1[i]) {
+        pm1.splice(i, 1)
+      }
+    }
+
+    return pm1
+
+  }
+
+  function addItem(pm1, pm2) {
+    pm1.push(pm2);
+    return pm1;
+  }
 
 //removeItem(myGroceryList, 'chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //addItem(myGroceryList, 'Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
@@ -114,11 +198,19 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
 
 
+
 //Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 
   //Code Here
 
+  function maker(param1) {
+    var answer = [];
+    for (var i = 1; i <= 215; i++) {
+      answer.push(i);
+    }
+    return answer;
 
+  }
 
 //Next Problem
 
@@ -128,7 +220,18 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 //array after adding ten to each item in numbers. *Verify your answer is correct. --> [15, 19, 26, 29, 35, 44, 58]
 
   //Code Here
+function addTen(nums) {
+  var answer = [];
+  nums.forEach(function(x){
+    answer.push(parseInt(x)+10)
 
+  })
+
+  return answer;
+
+
+
+}
 
 
 //Next Problem
@@ -150,6 +253,16 @@ for(var i = 0; i < num2; i++){
 
   //Code Here
 
+  function longer(arr1, arr2) {
+    if (arr1 > arr2) {
+      return arr1;
+    }
+
+    else {
+      return arr2;
+    }
+  }
+
 
 /*As a continuation of the previous problem, write another function called 'both'.
   Your 'both' function will be given two arguments, arr1 and arr2 (from the previous example).
@@ -159,7 +272,26 @@ for(var i = 0; i < num2; i++){
 
   //Code Here
 
+function both(arr1, arr2) {
+  // var newArr = [];
+  // for (var i = 0; i < arr1.length; i++) {
+  //   if (arr2.indexOf(arr1[i]) > -1) {
+  //     newArr.push(arr1[i])
+  //   }
+  // }
+  //
+  // return newArr;
 
+  var newArr = [];
+  arr1.forEach(function(value, idx){
+    if (arr2.indexOf(value) > -1) {
+      newArr.push(value);
+    }
+  })
+
+  return newArr;
+
+}
 
 
 //NEXT PROBLEM
@@ -199,13 +331,27 @@ sure that it's equal to 4. */
 
   //Code Here
 
+  devMountainEmployees = [tyler, cahlan, ryan, colt]
+  console.log(devMountainEmployees)
+
 /*Now let's say Cahlan has a mental breakdown and has to take a leave of absence to 'find himself'.
 Loop through your devMountainEmployees until you find cahlan, then remove him from the array.*/
 
-  //Code Here
+  // Code Here
+devMountainEmployees.forEach(function(value, idx, arr) {
+  if (value["name"] === "Cahlan") {
+    arr.splice(idx, 1);
+  }
+})
 
-
-
+  // var newEmployees = devMountainEmployees.slice();
+  // console.log(newEmployees)
+  //
+  // newEmployees.forEach(function(value, idx, arr) {
+  //   if (value["name"] === "Cahlan") {
+  //     arr.splice(idx, 1);
+  //   }
+  // })
 
 //NEXT PROBLEM
 
@@ -244,7 +390,12 @@ of Data is to have an Array full of objects. */
 
 //Create an empty array called users.
 
+
+
   //Code Here
+
+  var users = [];
+
 
 /*Now add three user objects to your users array. Each user object should contain the
 following properties. name, email, password, username.*/
@@ -259,14 +410,51 @@ var user1 = {
 
 //Your Code Here
 
+var obj1 = {
+  name: undefined,
+  email: undefined,
+  password: undefined,
+  username: undefined
+}
+
+var obj2 = {
+  name: undefined,
+  email: undefined,
+  password: undefined,
+  username: undefined
+}
+
+var obj3 = {
+  name: undefined,
+  email: undefined,
+  password: undefined,
+  username: undefined
+}
+
+users = [user1, obj1, obj2, obj3]
+console.log(users)
 /*Now you have a very common data structure. Twitter is a good use case.
-It's easy to imagine that your followers list on Twitter is an Array full or objects
+It's easy to imagine that your followers list on Twitter is an Array full of objects
 and those objects contain properties about the specific person you follow.*/
 
 /*Now let's say that Tyler decided to delete his account. Loop through your array of
 objects until you find Tyler's account (use tylermcginnis33@gmail.com to find him).
 Once you find the particular index he's located in, delete him from the array.*/
 
+
+
+users.forEach(function(value, idx, arr){
+  if (value["email"] === "tylermcginnis33@gmail.com") {
+    users.splice(idx, 1)
+  }
+
+  return users;
+})
+
+
+
   //Code Here
+
+
 
 //The activity we just did is very much how data works in 'the real world'.
